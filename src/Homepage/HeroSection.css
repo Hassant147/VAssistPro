@@ -1,0 +1,46 @@
+@keyframes moveArrow {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(100% - -100px)); /* Adjusting to the height of the container minus some margin */
+    }
+  }
+  
+  .scroll-arrow {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .dots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 4px 0;
+  }
+  
+  .arrow-container {
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    animation: moveArrow 3s infinite;
+  }
+  
+  .arrow-icon {
+    font-size: 36px;
+    color: white;
+  }
+  

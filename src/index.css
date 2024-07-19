@@ -1,13 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --placeholder-color-light: #6155A8;
+  --placeholder-color-dark: black;
+}
+
+/* Add this to your main CSS file or a component-specific CSS file */
+.dark input::placeholder {
+  color: black;
+}
+
+/* Hello */
+body.no-scroll {
+  overflow: hidden;
+}
+
+header {
+  background-color: black;
+  color: white;
+}
+
+button:focus {
+  outline: none;
+}
+
+.fixed {
+  z-index: 1000;
+}
+
+.hidden.md\:flex {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hidden.md\:flex {
+    display: flex;
+  }
+}
+
+/* Additional Styles for the Grid and Links */
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-gray-700 {
+  border-color: #4a4a4a;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --space-x-reverse: 0;
+  margin-left: calc(1rem * var(--space-x-reverse));
+  margin-right: calc(1rem * calc(1 - var(--space-x-reverse)));
+}
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--space-y-reverse)));
+  margin-bottom: calc(2rem * var(--space-y-reverse));
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.text-white {
+  color: white;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+/* Homepage.css */
+
+.testimonials-mobile {
+  display: none;
+}
+
+.testimonials-desktop {
+  display: block;
+}
+
+@media (max-width: 1020px) {
+  .testimonials-mobile {
+    display: block;
+  }
+  
+  .testimonials-desktop {
+    display: none;
+  }
 }

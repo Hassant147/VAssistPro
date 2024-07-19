@@ -1,0 +1,17 @@
+/* Light theme progress bar */
+.Toastify__progress-bar--default {
+    background-color: #6155A8; /* Your light theme color */
+}
+
+/* Dark theme progress bar */
+body.dark .Toastify__progress-bar--default {
+    background-color: #DFBB00; /* Your dark theme color */
+}
+
+/* Common styles */
+.Toastify__toast {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 10px;
+}

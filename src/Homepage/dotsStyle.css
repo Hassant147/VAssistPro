@@ -1,0 +1,15 @@
+.custom-dots li button:before {
+  color: #C4C4C4; /* Default color for dots */
+}
+
+.custom-dots li.slick-active button:before {
+  color: #6155A8; /* Light theme active color */
+}
+
+.dark .custom-dots li button:before {
+  color: #C4C4C4; /* Default color for dots in dark theme */
+}
+
+.dark .custom-dots li.slick-active button:before {
+  color: #DFBB00; /* Dark theme active color */
+}
