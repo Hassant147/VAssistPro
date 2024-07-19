@@ -1,42 +1,42 @@
-.container {
+.containerForMobile {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.section {
+.sectionForMobile {
     padding: 60px 0;
     background-color: #ffffff; /* Light mode background */
 }
 
-.section.dark {
+.sectionForMobile.dark {
     background-color: #000000; /* Dark mode background */
 }
 
-.section-title {
+.section-titleForMobile {
     font-size: 2rem;
     font-weight: 500;
     text-align: center;
     color: #1a202c; /* Light mode text color */
 }
 
-.section-title.dark {
+.section-titleForMobile.dark {
     color: #e2e8f0; /* Dark mode text color */
 }
 
-.section-subtitle {
+.section-subtitleForMobile {
     margin-top: 10px;
     font-size: 1.125rem;
     text-align: center;
     color: #4a5568; /* Light mode text color */
 }
 
-.section-subtitle.dark {
+.section-subtitleForMobile.dark {
     color: #a0aec0; /* Dark mode text color */
 }
 
-.review-grid,
-.review-grid-single-column {
+.review-gridForMobile,
+.review-grid-single-columnForMobile {
     display: grid;
     row-gap: 40px; /* Equal vertical spacing between rows */
     column-gap: 40px; /* Equal horizontal spacing between columns */
@@ -46,22 +46,22 @@
     margin-top: 40px;
 }
 
-.review-grid-single-column {
+.review-grid-single-columnForMobile {
     grid-template-columns: 1fr;
 }
 
-.review-column,
-.review-grid-single-column {
+.review-columnForMobile,
+.review-grid-single-columnForMobile {
     display: flex;
     flex-direction: column;
     gap: 40px; /* Ensure equal spacing between review cards in each column */
     position: relative;
 }
 
-.review-column::before,
-.review-column::after,
-.review-grid-single-column::before,
-.review-grid-single-column::after {
+.review-columnForMobile::before,
+.review-columnForMobile::after,
+.review-grid-single-columnForMobile::before,
+.review-grid-single-columnForMobile::after {
     content: '';
     position: absolute;
     left: 0;
@@ -72,82 +72,83 @@
     z-index: 1;
 }
 
-.review-column.dark::before,
-.review-column.dark::after,
-.review-grid-single-column.dark::before,
-.review-grid-single-column.dark::after {
-    background: linear-gradient(to bottom, rgba(26, 32, 44, 1), rgba(26, 32, 44, 0)); /* Dark mode gradient */
+.review-columnForMobile.dark::before,
+.review-columnForMobile.dark::after,
+.review-grid-single-columnForMobile.dark::before,
+.review-grid-single-columnForMobile.dark::after {
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0)); /* Dark mode gradient */
 }
 
-.review-column::before,
-.review-grid-single-column::before {
+.review-columnForMobile::before,
+.review-grid-single-columnForMobile::before {
     top: 0;
 }
 
-.review-column::after,
-.review-grid-single-column::after {
+.review-columnForMobile::after,
+.review-grid-single-columnForMobile::after {
     bottom: 0;
     transform: rotate(180deg);
 }
 
-.review {
+.reviewForMobile {
     background: #fff; /* Light mode background */
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: scrollUpFastForMobile 7s linear infinite;
 }
 
-.review.dark {
+.reviewForMobile.dark {
     background: #151515;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.star-rating {
+.star-ratingForMobile {
     display: flex;
 }
 
-.star {
+.starForMobile {
     height: 20px;
     width: 20px;
     fill: #e2e8f0;
 }
 
-.star-filled {
+.star-filledForMobile {
     fill: #0ea5e9;
 }
 
-.review-title {
+.review-titleForMobile {
     margin-top: 10px;
     font-size: 1.125rem;
     font-weight: 600;
     color: #1a202c; /* Light mode text color */
 }
 
-.review-title.dark {
+.review-titleForMobile.dark {
     color: #e2e8f0; /* Dark mode text color */
 }
 
-.review-body {
+.review-bodyForMobile {
     margin-top: 10px;
     font-size: 1rem;
     color: #4a5568; /* Light mode text color */
 }
 
-.review-body.dark {
+.review-bodyForMobile.dark {
     color: #a0aec0; /* Dark mode text color */
 }
 
-.review-author {
+.review-authorForMobile {
     margin-top: 10px;
     font-size: 0.875rem;
     color: #718096; /* Light mode text color */
 }
 
-.review-author.dark {
+.review-authorForMobile.dark {
     color: #cbd5e0; /* Dark mode text color */
 }
 
-@keyframes scrollUpFast {
+@keyframes scrollUpFastForMobile {
     0% {
         transform: translateY(100%);
         opacity: 1;
@@ -164,7 +165,7 @@
     }
 }
 
-@keyframes scrollUp {
+@keyframes scrollUpForMobile {
     0% {
         transform: translateY(100%);
         opacity: 1;
@@ -179,8 +180,4 @@
         transform: translateY(-100%);
         opacity: 1;
     }
-}
-
-.review {
-    animation: scrollUpFast 7s linear infinite;
 }
