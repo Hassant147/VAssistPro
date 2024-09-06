@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Loader from './Homepage/Components/loader';  // Import the Loader component
+import Loader from './Homepage/Components/loader';
 import Header from './Homepage/Header';
+import { FaArrowLeft } from 'react-icons/fa'; // Import the icon from react-icons
+import { FaPhoneAlt } from "react-icons/fa";
 
 const AssistMePage = ({ toggleDarkMode, darkMode, handleScrollToPricing }) => {
   const navigate = useNavigate();
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,7 +48,7 @@ const AssistMePage = ({ toggleDarkMode, darkMode, handleScrollToPricing }) => {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw9j5xNEHkRJiyhWrXCc99Mje_ejLuNfyUTnd7Xfz-ZkkZPKk1CCD3hlnvG5YwXH8Zb5w/exec'; // Replace with your Google Apps Script URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw9j5xNEHkRJiyhWrXCc99Mje_ejLuNfyUTnd7Xfz-ZkkZPKk1CCD3hlnvG5YwXH8Zb5w/exec';
 
     fetch(scriptURL, {
       method: 'POST',
@@ -92,16 +94,29 @@ const AssistMePage = ({ toggleDarkMode, darkMode, handleScrollToPricing }) => {
     setTimeout(() => {
       const event = new Event('scrollToPricing');
       window.dispatchEvent(event);
-    }, 100); // Delay to ensure navigation has completed
+    }, 100);
+  };
+
+  const goBack = () => {
+    navigate('/');
   };
 
   return (
     <>
-      <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} handleScrollToPricing={handleScrollToPricing} />
-      <section className="py-14 h-screen sm:py-16 lg:py-20 bg-[#F4F4F8] dark:bg-[#151515] text-gray-900 dark:text-gray-100">
+      <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} handleScrollToPricing={handleNavigateToPricing} />
+      <section className="py-14 min-h-screen sm:py-16 lg:py-20 bg-[#F4F4F8] dark:bg-[#151515]  text-gray-900 dark:text-gray-100">
         <div className="w-[88%] mx-auto">
           <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 justify-between items-start">
             <div className="md:w-[40%] min-w-[300px] w-full text-left">
+              <div className="flex justify-start mb-6">
+                <button
+                  onClick={goBack}
+                  className="flex items-center px-4 py-2 bg-[#7469B6] dark:bg-[#17AEE7] text-white rounded hover:bg-purple-950"
+                >
+                  <FaArrowLeft className="mr-2" /> {/* Use the icon here */}
+                  {/* No text here since we're using an icon */}
+                </button>
+              </div>
               <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold mb-2 sm:mb-4 md:mb-5 lg:mb-8">
                 Call on us when you need a hand
               </h2>
@@ -163,7 +178,7 @@ const AssistMePage = ({ toggleDarkMode, darkMode, handleScrollToPricing }) => {
                 </div>
                 <div>
                   <button
-                    className="w-full sm:w-auto text-sm px-6 py-2 bg-[#7469B6] dark:bg-[#DFBB00] text-white font-light rounded-md shadow-sm hover:bg-purple-700 dark:hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-[#f3ef00]"
+                    className="w-full sm:w-auto text-sm px-6 py-2 bg-[#7469B6] dark:bg-[#17AEE7] text-white font-light rounded-md shadow-sm hover:bg-purple-700 dark:hover:bg-cyan-500 focus:outline-none focus:ring-2"
                     type="submit"
                     disabled={isSubmitting}
                   >
@@ -171,38 +186,42 @@ const AssistMePage = ({ toggleDarkMode, darkMode, handleScrollToPricing }) => {
                   </button>
                 </div>
               </form>
-              <button onClick={handleNavigateToPricing} className="mt-4 text-[#7469B6] dark:text-[#DFBB00] hover:underline">
+              <button onClick={handleNavigateToPricing} className="mt-4 text-[#7469B6] dark:text-[#17AEE7] hover:underline">
                 Go to Pricing
               </button>
             </div>
             <div className="border-2 sm:border-0 dark:border-none w-full md:max-w-[300px] bg-[#F4F4F8] dark:bg-black shadow-lg p-6 text-left">
-              <h3 className="text-lg font-medium mb-4 dark:text-[#DFBB00] text-[#7469B6]">Get In Touch</h3>
+              <h3 className="text-lg font-medium mb-4 dark:text-[#17AEE7] text-[#7469B6]">Get In Touch</h3>
               <ul className="space-y-3 text-sm font-extralight">
                 <li className="border-b-2 pb-2">
-                  <span className="">Call</span>
-                  <p>+92 333 555 444</p>
+                  <a href="tel:941-623-4590" className="flex items-center text-[#7469B6] dark:text-[#17AEE7] hover:underline">
+                    <FaPhoneAlt className="mr-2" /> {/* Adds the call icon */}
+                    Call
+                  </a>
+                  <p>941-623-4590</p>
                 </li>
                 <li className="border-b-2 pb-2">
                   <span className="">Support</span>
-                  <p>info@gmail.com</p>
+                  <p>info@virtualassistancepro.com</p>
                 </li>
-                <li className="border-b-2 pb-2">
+                {/* <li className="border-b-2 pb-2">
                   <span className="">Media</span>
                   <p>media@gmail.com</p>
-                </li>
+                </li> */}
                 <li className="">
-                  <span className="font-medium text-[#7469B6] dark:text-[#DFBB00]">Mailing Address</span>
-                  <p>You can write</p>
-                  <p>time etc</p>
+                  <span className="font-medium text-[#7469B6] dark:text-[#17AEE7]">Mailing Address</span>
+                  <p className="mt-1">• 5825 gulfton st apt 3205 Houston tx 77081</p>
+                  <p className="mt-4">• 7901 4th St N Ste 300, Saint Petersburg, FL 33702</p>
+                  {/* <p>time etc</p>
                   <p>256 suite</p>
                   <p>new york</p>
                   <p>ny 100101</p>
-                  <p>united States</p>
+                  <p>united States</p> */}
                 </li>
                 <li className="mt-4">
-                  <a href="#" className="font-medium text-[#7469B6] dark:text-[#DFBB00] hover:underline">
+                  {/* <a href="#" className="font-medium text-[#7469B6] dark:text-[#17AEE7] hover:underline">
                     Get Direction
-                  </a>
+                  </a> */}
                 </li>
               </ul>
             </div>

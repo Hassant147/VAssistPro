@@ -1,7 +1,7 @@
 .toggle-switch {
   position: relative;
-  width: 30px; /* Reduced width */
-  height: 16px; /* Reduced height */
+  width: 50px;
+  height: 28px;
 }
 
 .toggle-switch input {
@@ -17,28 +17,31 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #6155A8; /* Default background color for dark mode */
+  background-color: white; /* Default background color for dark mode */
   transition: 0.4s;
-  border-radius: 20px; /* Adjusted border-radius to match reduced size */
+  border-radius: 20px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 12px; /* Reduced height */
-  width: 12px; /* Reduced width */
-  left: 4px; /* Adjusted left position */
-  bottom: 2px; /* Adjusted bottom position */
-  background-color: white;
+  height: 22px;
+  width: 22px;
+  left: 5px;
+  bottom: 3px;
+  background-image: url('../../assets//ForHeaderSection/moon.svg'); /* Default icon for dark mode */
+  background-size: contain;
+  background-repeat: no-repeat;
   transition: 0.4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #ffff; /* Background color for light mode */
+  background-color: black; /* Background color for light mode */
 }
 
 input:checked + .slider:before {
-  transform: translateX(12px); /* Move slider to the right */
-  background-color:rgb(224, 221, 0); /* Color of the slider when checked */
+  transform: translateX(18px); /* Move slider to the right */
+  background-image: url('../../assets//ForHeaderSection/sun.svg'); /* Icon for light mode */
+  background-color: transparent; /* Remove background color */
 }

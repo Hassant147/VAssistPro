@@ -1,18 +1,31 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; // Added useRef here
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import Homepage from './Homepage/Homepage';
 import AssistMePage from './AssistMePage';
 import PrivacyPolicy from './PrivacyPolicy';
 import './App.css';
 
-function App() {
-  const [darkMode, setDarkMode] = useState(false);
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const currentTheme = document.documentElement.classList.contains('dark');
-    setDarkMode(currentTheme);
-  }, []);
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+function App() {
+  const [darkMode, setDarkMode] = useState(false); // Initialize darkMode to false
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -25,6 +38,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop /> {/* Add the ScrollToTop component here */}
       <div className={`App ${darkMode ? 'dark' : ''}`}>
         <SwipeableRoutes toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       </div>
@@ -45,14 +59,10 @@ const SwipeableRoutes = ({ toggleDarkMode, darkMode }) => {
 
   const pricingRef = useRef(null);
 
-  const handleScrollToPricing = () => {
-    pricingRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div {...handlers} className="h-full w-full">
       <Routes>
-        <Route path="/" element={<Homepage toggleDarkMode={toggleDarkMode} darkMode={darkMode} handleScrollToPricing={handleScrollToPricing} pricingRef={pricingRef} />} />
+        <Route path="/" element={<Homepage toggleDarkMode={toggleDarkMode} darkMode={darkMode} pricingRef={pricingRef} />} />
         <Route path="/assist-me" element={<AssistMePage toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>

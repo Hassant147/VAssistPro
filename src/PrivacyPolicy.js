@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa'; // Import the icon from react-icons
 
 const PrivacyPolicy = () => {
   const navigate = useNavigate();
@@ -13,10 +14,11 @@ const PrivacyPolicy = () => {
       <div className="flex justify-start mb-6">
         <button
           onClick={goBack}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="flex items-center px-4 py-2 bg-[#6155A8] text-white rounded hover:bg-purple-950"
         >
-          Back
-          </button>
+          <FaArrowLeft className="mr-2" /> {/* Use the icon here */}
+          {/* No text here since we're using an icon */}
+        </button>
       </div>
       <div className="bg-white shadow-md rounded-lg p-8">
         <h1 className="text-3xl font-bold mb-6 text-left">Privacy Policy for VassistPro INC</h1>
@@ -52,6 +54,10 @@ const PrivacyPolicy = () => {
           <li>Transactions: To process payments and manage billing in compliance with Stripe’s rules on transition currency.</li>
           <li>Security: To monitor and enhance the security of our platform, preventing fraud and unauthorized access.</li>
         </ul>
+        <h2 className="text-2xl font-semibold mt-6 text-left">No Refund Policy</h2>
+        <p className="mt-2 text-left">
+          All sales made through our platform are final, and we do not offer refunds for any services or products purchased. Please ensure that you review your selections carefully before completing any transaction. By using our services, you acknowledge and agree to this No Refund Policy.
+        </p>
         <h2 className="text-2xl font-semibold mt-6 text-left">Sharing Your Information</h2>
         <p className="mt-2 text-left">
           We may share your information with third parties under the following circumstances:
@@ -79,7 +85,7 @@ const PrivacyPolicy = () => {
         </ul>
         <h2 className="text-2xl font-semibold mt-6 text-left">Transition Currency and Payment Processing</h2>
         <p className="mt-2 text-left">
-          In compliance with Stripe’s rules on transition currency, all transactions processed through our platform will be handled in the specified currency at the time of the transaction. We ensure that your payment information is securely processed and that all necessary measures are taken to protect your financial data.
+          In compliance with Stripe’s rules on transition currency, all transactions processed through our platform will be handled in U.S. dollars. We ensure that your payment information is securely processed and that all necessary measures are taken to protect your financial data.
         </p>
         <h2 className="text-2xl font-semibold mt-6 text-left">Changes to This Privacy Policy</h2>
         <p className="mt-2 text-left">

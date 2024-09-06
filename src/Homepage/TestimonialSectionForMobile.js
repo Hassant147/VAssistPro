@@ -3,43 +3,80 @@ import { useInView } from 'framer-motion';
 import './ReviewsForMobile.css'; // Ensure this path is correct
 
 const reviews = [
-    {
-        title: 'I’m 13 and I’m rich.',
-        body: 'I love that with Pocket’s transaction anonymization I could sign up and start trading when I was 12 years old. I had a million dollars before I had armpit hair!',
-        author: 'RichieRich',
-        rating: 5,
-    },
-    {
-        title: 'Started an investment firm.',
-        body: 'I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!',
-        author: 'TheCountOfMonteChristo',
-        rating: 5,
-    },
-    {
-        title: 'It’s like a superpower.',
-        body: 'Every tip Pocket has sent me has paid off. It’s like playing Blackjack but knowing exactly what card is coming next!',
-        author: 'ClarkKent',
-        rating: 5,
-    },
-    {
-        title: 'Quit my job.',
-        body: 'I downloaded Pocket three days ago and quit my job today. I can’t believe no one else thought to build a stock trading app that works this way!',
-        author: 'GeorgeCostanza',
-        rating: 5,
-    },
-    {
-        title: 'Don’t download this app',
-        body: 'Unless you want to have the best life ever! I am literally writing this from a yacht.',
-        author: 'JeffBezos',
-        rating: 5,
-    },
-    {
-        title: 'Don’t download this app',
-        body: 'Unless you want to have the best life ever! I am literally writing this from a yacht.',
-        author: 'JeffBezos',
-        rating: 5,
-    },
+  {
+    title: 'Excellent Service',
+    body: 'V Assist Pro Inc. provided exceptional service, and their team was extremely professional and helpful.',
+    author: 'John Doe',
+    rating: 5,
+  },
+  {
+    title: 'Great Experience',
+    body: 'I had a great experience with V Assist Pro Inc. They were efficient and met all my expectations.',
+    author: 'Jane Smith',
+    rating: 4,
+  },
+  {
+    title: 'Highly Recommend',
+    body: 'I highly recommend V Assist Pro Inc. Their attention to detail and customer service are outstanding.',
+    author: 'Chris Wilson',
+    rating: 5,
+  },
+  {
+    title: 'Very Satisfied',
+    body: 'I am very satisfied with the service from V Assist Pro Inc. They went above and beyond to ensure my needs were met.',
+    author: 'Amanda Taylor',
+    rating: 5,
+  },
+  {
+    title: 'Quick and Efficient',
+    body: 'V Assist Pro Inc. provided quick and efficient service. I am pleased with the results.',
+    author: 'Laura Martin',
+    rating: 4,
+  },
+  {
+    title: 'Outstanding Performance',
+    body: 'The performance of V Assist Pro Inc. was outstanding. I am extremely happy with their work.',
+    author: 'Daniel Harris',
+    rating: 5,
+  },
+  {
+    title: 'Professional and Reliable',
+    body: 'V Assist Pro Inc. is professional and reliable. I trust them with my business needs.',
+    author: 'Brian Walker',
+    rating: 4,
+  },
+  {
+    title: 'Exceeded Expectations',
+    body: 'V Assist Pro Inc. exceeded my expectations with their top-notch service and professionalism.',
+    author: 'Olivia Parker',
+    rating: 5,
+  },
+  {
+    title: 'Exceptional Quality',
+    body: 'The quality of service provided by V Assist Pro Inc. is exceptional. They truly care about their clients.',
+    author: 'Liam Turner',
+    rating: 5,
+  },
+  {
+    title: 'Impressive Service',
+    body: 'I am impressed with the service provided by V Assist Pro Inc. They are reliable and efficient.',
+    author: 'Sophia White',
+    rating: 4,
+  },
+  {
+    title: 'Top-Notch Support',
+    body: 'V Assist Pro Inc. offers top-notch support. They are always available to help and provide great solutions.',
+    author: 'Mason Green',
+    rating: 5,
+  },
+  {
+    title: 'Fantastic Team',
+    body: 'The team at V Assist Pro Inc. is fantastic. They work hard to meet all of our needs.',
+    author: 'Isabella Brown',
+    rating: 5,
+  }
 ];
+  
 
 function StarIcon({ filled }) {
     return (
@@ -91,7 +128,7 @@ export default function ReviewsForMobile({ darkMode }) {
             <section id="reviews-smallForMobile" aria-labelledby="reviews-titleForMobile" className={`sectionForMobile review-section-smallForMobile ${darkMode ? 'dark' : ''}`}>
                 <div className="containerForMobile">
                     <h2 id="reviews-titleForMobile" className={`section-titleForMobile ${darkMode ? 'dark' : ''}`}>
-                        Everyone is changing their life with Pocket.
+                        Everyone is changing their life with V Assist Pro Inc.
                     </h2>
                     <p className={`section-subtitleForMobile ${darkMode ? 'dark' : ''}`}>
                         Thousands of people have doubled their net-worth in the last 30 days.

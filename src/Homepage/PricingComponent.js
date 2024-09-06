@@ -6,63 +6,6 @@ import { Button } from './Components/Button';
 import { Container } from './Components/Container';
 import { Logomark } from './Components/Logo';
 
-const plans = [
-  {
-    name: 'Starter',
-    featured: false,
-    price: { Monthly: '$0', Annually: '$0' },
-    description: 'You’re new to investing but want to do it right. Get started for free.',
-    button: {
-      label: 'Get started for free',
-      href: '/register',
-    },
-    features: [
-      'Commission-free trading',
-      'Multi-layered encryption',
-      'One tip every day',
-      'Invest up to $1,500 each month',
-    ],
-    logomarkClassName: 'fill-gray-300',
-  },
-  {
-    name: 'Investor',
-    featured: false,
-    price: { Monthly: '$7', Annually: '$70' },
-    description: 'You’ve been investing for a while. Invest more and grow your wealth faster.',
-    button: {
-      label: 'Subscribe',
-      href: '/register',
-    },
-    features: [
-      'Commission-free trading',
-      'Multi-layered encryption',
-      'One tip every hour',
-      'Invest up to $15,000 each month',
-      'Basic transaction anonymization',
-    ],
-    logomarkClassName: 'fill-gray-500',
-  },
-  {
-    name: 'VIP',
-    featured: true,
-    price: { Monthly: '$199', Annually: '$1,990' },
-    description: 'You’ve got a huge amount of assets but it’s not enough. To the moon.',
-    button: {
-      label: 'Subscribe',
-      href: '/register',
-    },
-    features: [
-      'Commission-free trading',
-      'Multi-layered encryption',
-      'Real-time tip notifications',
-      'No investment limits',
-      'Advanced transaction anonymization',
-      'Automated tax-loss harvesting',
-    ],
-    logomarkClassName: 'fill-cyan-500',
-  },
-];
-
 function CheckIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -127,7 +70,7 @@ function Plan({
               className={clsx(
                 'transition duration-300',
                 activePeriod === 'Annually' &&
-                  'pointer-events-none translate-x-6 select-none opacity-0'
+                'pointer-events-none translate-x-6 select-none opacity-0'
               )}
             >
               {price.Monthly}
@@ -137,7 +80,7 @@ function Plan({
               className={clsx(
                 'absolute left-0 top-0 transition duration-300',
                 activePeriod === 'Monthly' &&
-                  'pointer-events-none -translate-x-6 select-none opacity-0'
+                'pointer-events-none -translate-x-6 select-none opacity-0'
               )}
             >
               {price.Annually}
@@ -171,16 +114,19 @@ function Plan({
                   featured ? (darkMode ? 'text-gray-100' : 'text-white') : (darkMode ? 'text-cyan-300' : 'text-cyan-500')
                 )}
               />
-              <span className="ml-4">{feature}</span>
+              <span className="ml-4 text-left">{feature}</span>
             </li>
           ))}
         </ul>
       </div>
       <Button
         href={button.href}
-        color={featured ? 'cyan' : 'gray'}
         className="mt-6"
         aria-label={`Get started with the ${name} plan for ${price}`}
+        style={{
+          backgroundColor: featured ? (darkMode ? '#17AEE7' : '#6155A8') : 'white',
+          color: featured ? 'white' : 'black'
+        }}
       >
         {button.label}
       </Button>
@@ -190,6 +136,82 @@ function Plan({
 
 export default function Pricing({ darkMode }) {
   const [activePeriod, setActivePeriod] = useState('Monthly');
+
+
+// Standard Service Package
+// : 
+// • • 
+// • 
+// • 
+// • 
+// • 
+// • 
+
+
+  const plans = [
+    {
+      name: 'Midnight Package',
+      featured: false,
+      price: { Monthly: '$9/Agent', Annually: '$0' },
+      description: 'You’re new to investing but want to do it right. Get started for free.',
+      button: {
+        label: 'Get started for free',
+        href: '/register',
+      },
+      features: [
+        'Hours: 12 AM to 12 PM',
+        'Agent Rate: $9/hour',
+        'Minimum: 150 hours/month',
+        'Total Cost: $1,350',
+        'Supervisor Rate: $7/hour',
+        'Supervisor Cost: $1,050',
+        'Services: Calls, Emails, Driver wake-up, Follow-up on calls, emails, texts',
+
+    
+      ],
+      logomarkClassName: 'fill-gray-300',
+    },
+    {
+      name: 'Standard Service Package',
+      featured: false,
+      price: { Monthly: '$14/Agent', Annually: '$70' },
+      description: 'You’ve been investing for a while. Invest more and grow your wealth faster.',
+      button: {
+        label: 'Subscribe',
+        href: '/register',
+      },
+      features: [
+        'Hours: 12 AM to 12 PM',
+        'Agent Rate: $13/hour',
+        'Minimum: 150 hours/month',
+        'Total Cost: $1,950',
+        'Supervisor Rate: $7/hour',
+        'Supervisor Cost: $1,050',
+        'Services: Calls, Emails, Driver wake-up, Follow-up on calls, emails, texts',
+      ],
+      logomarkClassName: 'fill-gray-500',
+    },
+    {
+      name: 'Custom Package',
+      featured: true,
+      price: { Monthly: '$$$', Annually: '$1,990' },
+      description: 'You’ve got a huge amount of assets but it’s not enough. To the moon.',
+      button: {
+        label: 'Subscribe',
+        href: '/register',
+      },
+      features: [
+        'Tailored services based on specific requirements'
+        // 'Commission-free trading',
+        // 'Multi-layered encryption',
+        // 'Real-time tip notifications',
+        // 'No investment limits',
+        // 'Advanced transaction anonymization',
+        // 'Automated tax-loss harvesting',
+      ],
+      logomarkClassName: darkMode ? 'fill-cyan-500' : 'fill-[#6155A8]',
+    }
+  ];
 
   return (
     <section
@@ -242,7 +264,7 @@ export default function Pricing({ darkMode }) {
               aria-hidden="true"
               className={clsx(
                 'pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg transition-all duration-300',
-                darkMode ? 'bg-cyan-600' : 'bg-cyan-500',
+                darkMode ? 'bg-[#17a8dd]' : 'bg-[#6155A8]',
                 activePeriod === 'Monthly'
                   ? '[clip-path:inset(0_50%_0_0)]'
                   : '[clip-path:inset(0_0_0_calc(50%-1px))]'

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/ForHeaderSection/logo.svg'; // Replace with your logo path
 import lightlogo from '../assets/ForFooterComponent/light-icon.svg';
 
@@ -16,6 +17,7 @@ import darkemailIcon from '../assets/ForFooterComponent/ForDarkTheme/dark-mail.s
 
 const FooterComponent = () => {
   const [theme, setTheme] = useState('light');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const detectTheme = () => {
@@ -40,19 +42,22 @@ const FooterComponent = () => {
     email: theme === 'dark' ? darkemailIcon : emailIcon,
   };
 
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   return (
     <footer className="pt-5 pb-3 bg-white dark:bg-black text-black dark:text-white">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <div className="flex flex-col gap-y-3 items-center md:items-start text-center sm:text-left">
           <img src={theme === 'dark' ? logo : lightlogo} alt="V Assist Pro" className="h-10 mr-3 mb-2 sm:mb-0" />
-          <p className="text-sm">
+          <p className="text-sm ">
             &copy; Copyright 2024 &nbsp;
-            <span>Worldwideli01 Inc.</span> &nbsp;
             <span>V Assist Pro Inc.</span>
           </p>
         </div>
         <div className="flex flex-col items-center md:items-start gap-y-4 md:space-y-0">
-          <div className="flex space-x-4">
+          <div className="flex md:space-x-4 space-x-8">
             <a href="#" className="hover:text-purple-600">
               <img src={icons.linkedin} alt="LinkedIn" className="h-6" />
             </a>
@@ -70,9 +75,9 @@ const FooterComponent = () => {
             </a>
           </div>
           <div className="flex space-x-4 mt-4 md:mt-0 dark:text-white text-black">
-            <a href="/privacy-policy" className="hover:text-purple-600 text-sm">Privacy</a>
-            <a href="#" className="hover:text-purple-600 text-sm">Terms</a>
-            <a href="#" className="hover:text-purple-600 text-sm">Login</a>
+            <button onClick={() => handleNavigate('/privacy-policy')} className="hover:text-purple-600 dark:hover:text-[#17AEE7] text-sm">
+              Privacy Policy
+            </button>
           </div>
         </div>
       </div>

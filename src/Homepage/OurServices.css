@@ -7,12 +7,14 @@
     position: relative !important;
     bottom: -20px !important;
     cursor: pointer !important;
+    margin: 0 -10px; /* Adjust the margin to decrease the distance */
 }
 
 .slick-arrows-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    gap: 0px; /* Add gap property to control the distance between arrows */
 }
 
 .service-card {

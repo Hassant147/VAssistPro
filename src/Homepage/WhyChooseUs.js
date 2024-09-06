@@ -14,7 +14,7 @@ import darkLight from '../assets/ForWhyChooseUs/ForDarkTheme/light.svg';
 import darkGiving from '../assets/ForWhyChooseUs/ForDarkTheme/giving.svg';
 import darkClock from '../assets/ForWhyChooseUs/ForDarkTheme/clock.svg';
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import './WhyChooseUs.css'; // Import the CSS file
 
 const WhyChooseUsSection = ({ darkMode }) => {
@@ -87,20 +87,21 @@ const WhyChooseUsSection = ({ darkMode }) => {
         </div>
         <div className="md:hidden">
           <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
             spaceBetween={16}
             slidesPerView={1}
             pagination={{ clickable: true }}
             navigation
             scrollbar={{ draggable: true }}
-            className="custom-swiper"
+            autoplay={{ delay: 1500 }}
+            className={`custom-swiper ${darkMode ? 'dark' : 'light'}`}
           >
             {cards.map((card, index) => (
               <SwiperSlide key={index}>
-                <div className="card bg-gray-200 dark:text-white dark:bg-[#151515] p-4 sm:p-6 rounded-lg shadow-md flex flex-col items-center text-center mx-auto w-3/4">
-                  <img src={card.icon} alt={card.title} className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 mb-3 sm:mb-4" />
-                  <h3 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-semibold mb-1 sm:mb-2">{card.title}</h3>
-                  <p className="text-xs sm:text-sm lg:text-base xl:text-lg">{card.description}</p>
+                <div className="card bg-gray-200 dark:text-white dark:bg-[#151515] p-6 rounded-lg shadow-md flex flex-col items-center text-center mx-auto w-full sm:w-3/4">
+                  <img src={card.icon} alt={card.title} className="h-12 w-12 mb-3 sm:mb-4" />
+                  <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold mb-1 sm:mb-2">{card.title}</h3>
+                  <p className="text-base xl:text-lg ">{card.description}</p>
                 </div>
               </SwiperSlide>
             ))}

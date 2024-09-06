@@ -124,6 +124,42 @@ button:focus {
   height: 100vh;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .grid-cols-2-header {
+    grid-template-columns: 1fr;
+  }
+
+  .address-section {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-3xl {
+    font-size: 2rem;
+  }
+
+  .p-14 {
+    padding: 1rem;
+  }
+
+  .w-24 {
+    width: 6rem;
+  }
+  
+  .social-media-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .social-media-container a {
+    margin-bottom: 0;
+  }
+}
+
+
+
 /* Homepage.css */
 
 .testimonials-mobile {

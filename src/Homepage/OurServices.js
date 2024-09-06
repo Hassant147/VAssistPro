@@ -70,10 +70,12 @@ const OurServices = () => {
     const settings = {
         dots: false,
         infinite: true,
-        arrows:false,
+        arrows: false,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
         responsive: [
             {
                 breakpoint: 320,

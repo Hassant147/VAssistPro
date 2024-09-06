@@ -39,7 +39,7 @@ const TeamComponent = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 1500,
     adaptiveHeight: true,
     responsive: [
       {
@@ -73,7 +73,7 @@ const TeamComponent = () => {
             <div key={index} className=" ">
               <div className="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg w-64 mx-auto">
                 <img src={image} alt={name} className="w-full h-64 object-cover rounded-t-lg" />
-                <div className="bg-[#6155A8] dark:bg-[#DFBB00] dark:text-black text-white py-2">
+                <div className="bg-[#6155A8] dark:bg-[#17AEE7] dark:text-black text-white py-2">
                   <p className="text-lg sm:text-xl md:text-xl font-semibold">{name}</p>
                 </div>
               </div>
