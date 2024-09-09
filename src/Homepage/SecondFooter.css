@@ -1,0 +1,26 @@
+.flowers-left {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.flowers-right {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.custombordertopleft{
+border-top-right-radius: 66px;
+}

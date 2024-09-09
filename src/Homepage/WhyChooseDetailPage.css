@@ -1,0 +1,21 @@
+.prialto-features {
+  position: relative;
+}
+
+.prialto-features::before {
+  content: url("../assets/WhyUsDetailPage/table-top-icon.webp");
+  position: absolute;
+  top: -140px;
+  left: -100px;
+  width: 10%;
+  height: 10%;
+}
+
+.prialto-features::after {
+  content: url("../assets/WhyUsDetailPage/table-bottom-icon.webp");
+  position: absolute;
+  bottom: -51px;
+  right: 163px;
+  width: 100px;
+  height: 100px;
+}
