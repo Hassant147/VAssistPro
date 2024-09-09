@@ -186,16 +186,16 @@ const WhatWeDoSection = () => {
             <Slider ref={sliderRef} {...settings}>
               {servicesslides.map((service, index) => (
                 <div key={index} className="px-2 h-full">
-                  <div className="bg-gray-50 dark:bg-[#151515] min-h-[350px] h-full w-auto mx-auto shadow-lg  rounded-lg flex flex-col justify-between">
-                    <div className="mb-10 text-left p-6">
+                  <div className="bg-gray-50 dark:bg-[#151515] xl:min-h-[350px] lg:min-h-[250px] h-full w-auto mx-auto shadow-lg  rounded-lg flex flex-col justify-between">
+                    <div className="xl:mb-10 text-left md:p-6 lg:px-5 xl:p-6">
                       {/* service-icon ye class lagi hui thi margin bottom deny k liay 50px*/}
-                      <FontAwesomeIcon icon={service.icon} size="2x" />
+                      <FontAwesomeIcon icon={service.icon} className="text-[25px]" />
                     </div>
                     <div className="service-content mb-4 p-3.5">
-                      <h3 className="text-lg mb-2 p- text-black font-light justify-start text-start dark:text-white">
+                      <h3 className="xl:text-lg lg:text-base mb-2 text-black font-light justify-start text-start dark:text-white">
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-white text-sm font-extralight text-left">
+                      <p className="text-gray-600 dark:text-white xl:text-sm lg:text-xs font-extralight text-left">
                         {service.description}
                       </p>
                     </div>
