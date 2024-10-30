@@ -5,7 +5,7 @@ import "./SecondFooter.css"; // Custom CSS for additional styling
 
 const SecondFooter = ({ toggleDarkMode, darkMode, headingText, link }) => {
   return (
-    <section className="relative bg-[#29323c] dark:bg-[#000000] py-24 md:py-28 w-[88%] mx-auto text-center rounded-tr-l custombordertopleftt md:rounded-tr-[40px] rounded-tr-[10px]">
+    <section className="relative bg-[#29323c] dark:bg-[#000000] py-24 md:py-28 w-[88%] mx-auto text-center rounded-tr-l custombordertopleftt md:rounded-tr-[40px] rounded-tr-[10px] my-20">
       {/* Left Flower Image */}
       <img
         src={leftFlower}

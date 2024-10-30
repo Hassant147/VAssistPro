@@ -162,7 +162,7 @@ function Plan({
           backgroundColor: featured
             ? darkMode
               ? "#17AEE7"
-              : "#6155A8"
+              : "#17a8dd"
             : "white",
           color: featured ? "white" : "black",
         }}
@@ -175,15 +175,6 @@ function Plan({
 
 export default function Pricing({ darkMode }) {
   const [activePeriod, setActivePeriod] = useState("Monthly");
-
-  // Standard Service Package
-  // :
-  // • •
-  // •
-  // •
-  // •
-  // •
-  // •
 
   const plans = [
     {
@@ -247,7 +238,7 @@ export default function Pricing({ darkMode }) {
         // 'Advanced transaction anonymization',
         // 'Automated tax-loss harvesting',
       ],
-      logomarkClassName: darkMode ? "fill-cyan-500" : "fill-[#6155A8]",
+      logomarkClassName: darkMode ? "fill-cyan-500" : "fill-[#17a8dd]",
     },
   ];
 
@@ -311,7 +302,7 @@ export default function Pricing({ darkMode }) {
               aria-hidden="true"
               className={clsx(
                 "pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg transition-all duration-300",
-                darkMode ? "bg-[#17a8dd]" : "bg-[#6155A8]",
+                darkMode ? "bg-[#17a8dd]" : "bg-[#17a8dd]",
                 activePeriod === "Monthly"
                   ? "[clip-path:inset(0_50%_0_0)]"
                   : "[clip-path:inset(0_0_0_calc(50%-1px))]"

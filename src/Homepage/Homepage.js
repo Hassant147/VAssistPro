@@ -65,8 +65,7 @@ const Homepage = ({ toggleDarkMode, darkMode, pricingRef }) => {
       <div>
         <PricingComponent darkMode={darkMode} />
       </div>
-      <div ref={formRef} className="pt-20 pb-20">
-        {/* <FormComponent darkMode={darkMode} /> */}
+      <div ref={formRef} className="">
         <SecondFooter darkMode={darkMode}  headingText={"Have Questions? Let's Discuss Your Needs"}/>
       </div>
     </Layout>

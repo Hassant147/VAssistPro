@@ -65,12 +65,25 @@ const Header = ({ toggleDarkMode, darkMode }) => {
         <a href="tel:+1234567890" className="dark:bg-white bg-black text-white dark:text-black px-2 py-1 rounded-full">
           <FaPhone />
         </a>
+        <a
+          href="/why-choose-us"
+          className="px-4 py-2 rounded-lg bg-gradient-to-r from-sky-300 to-[#17ADE7] text-white font-semibold hover:from-[#17ADE7] hover:to-black transition duration-300 shadow-lg focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-300"
+        >
+          Why Us
+        </a>
+        <a
+          href="/pricing"
+          className="px-4 py-2 rounded-lg bg-gradient-to-r from-sky-300 to-[#17ADE7] text-white font-semibold hover:from-[#17ADE7] hover:to-black transition duration-300 shadow-lg focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-300"
+        >
+          Pricing
+        </a>
         <button onClick={toggleMenu} className="focus:outline-none">
           <svg className="w-8 h-8 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
           </svg>
         </button>
       </div>
+
       <AnimatePresence>
         {menuOpen && (
           <motion.div
